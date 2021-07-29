@@ -19,8 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('teste', function() {
-	return 'Funcionando!!!';
-});
-
 Route::post('characters', [CharactersController::class, 'createCharacter']);
