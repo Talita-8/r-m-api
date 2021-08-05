@@ -13,13 +13,13 @@ class CharactersController extends Controller
     public function createCharacter(Request $request)
     {
 
-        $validated = $request->validate([
-            "name"=>"required",
+        $request->validate([
+            "name"=>"required|unique:character",
             "status"=>"required",
             "species"=>"required",
             "type"=>"required",
             "gender"=>"required",
-            "image"=>"required"
+            "image"=>"required|ends_with:jpeg,jpg,png"
         ]);
 
 
