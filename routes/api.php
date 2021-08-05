@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('characters', [CharactersController::class, 'createCharacter']);
+Route::get('characters', [CharactersController::class, 'getAllCharacters']);

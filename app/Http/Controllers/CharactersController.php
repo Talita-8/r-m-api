@@ -40,5 +40,19 @@ class CharactersController extends Controller
         {
             return new JsonResponse($error->errorInfo[2], Response::HTTP_BAD_REQUEST);
         }
-     }
+    }
+
+    public function getAllCharacters()
+    {
+        try 
+        {
+            $characters = Character::all();
+
+            return new JsonResponse($characters, Response::HTTP_OK);
+        }
+        catch(Exception $error) 
+        {
+            return new JsonResponse($error->errorInfo[2], Response::HTTP_BAD_REQUEST);
+        }
+    }
 }
