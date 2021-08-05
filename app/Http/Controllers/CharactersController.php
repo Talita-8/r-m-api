@@ -12,11 +12,17 @@ class CharactersController extends Controller
 {
     public function createCharacter(Request $request)
     {
-    //     $validated = $request->validate([
-    //         "name"=>"required",
-    //         "status"=>"required",
-    //         "species"=>"required"
-    //     ]);
+
+        $validated = $request->validate([
+            "name"=>"required",
+            "status"=>"required",
+            "species"=>"required",
+            "type"=>"required",
+            "gender"=>"required",
+            "image"=>"required"
+        ]);
+
+
       try
       {
         $character = Character::create([
@@ -34,6 +40,5 @@ class CharactersController extends Controller
         {
             return new JsonResponse($error->errorInfo[2], Response::HTTP_BAD_REQUEST);
         }
-        
-    }
+     }
 }
