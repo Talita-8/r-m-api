@@ -24,7 +24,7 @@ class CharacterTest extends TestCase
          'image' => 'https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg'
         ]);
 
-        $response->assertStatus(201);
+        $response->assertStatus(200);
     }
 
     /**
@@ -43,6 +43,6 @@ class CharacterTest extends TestCase
          'image' => 'https://raw.githubusercontent.com/Laboratoria/rick-and-morty-images/master/images/1.jpeg'
         ]);
 
-        $response->assertStatus(500);
+        $response->assertStatus(422);
     }
 }
